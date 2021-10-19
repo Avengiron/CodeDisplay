@@ -1,6 +1,8 @@
 # CodeDisplay
 Affichage stylisé d'un bout de code, pour présentation
 
+(version java d'un projet Processing, nécessite la bibliothèque processing core.jar)
+
 Le bout de code à afficher doit se trouver dans le fichier code.txt, dans le dossier data/.
 La police doit également se trouver dans le dossier data/.
 

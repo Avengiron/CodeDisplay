@@ -1,0 +1,17 @@
+/** Met a jour le tableau de valeurs des points critiques */
+void computeProximity() {
+  for (int i = 0; i < rows + 1; i++) {
+    for (int j = 0; j < cols + 1; j++) {
+      // Calcul de la valeur definissant la proximite
+      // du point i, j par rapport a tous les cercles
+      float sum = 0; 
+      for (LightCircle c : circles) {
+        float num = ((c.rad / 2) * (c.rad / 2));
+        float den1 = (Ox + i * spacing - c.pos.x) * (Ox + i * spacing - c.pos.x);
+        float den2 = (Oy + j * spacing - c.pos.y) * (Oy + j * spacing - c.pos.y);
+        sum += num / (den1 + den2);
+      }
+      proxValues[i][j] = sum;
+    }
+  }
+}
